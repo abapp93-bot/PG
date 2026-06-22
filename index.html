@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff4d8d" />
+  <title>Il doppio quiz di PG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header">
+      <button id="homeBtn" class="icon-btn" aria-label="Torna alla home" title="Home">⌂</button>
+      <div>
+        <p class="eyebrow">COMPLEANNO EDITION</p>
+        <h1>Il doppio quiz di PG</h1>
+      </div>
+      <button id="resetBtn" class="text-btn" type="button">Ricomincia</button>
+    </header>
+
+    <section id="screen-home" class="screen active" aria-labelledby="homeTitle">
+      <div class="hero-card">
+        <span class="hero-emoji">🎂</span>
+        <h2 id="homeTitle">Benvenuto, PG!</h2>
+        <p id="introText">[Scrivi qui il testo di introduzione del compleanno.]</p>
+      </div>
+
+      <div class="quiz-picker">
+        <button class="quiz-card" data-start="slime">
+          <span class="quiz-number">QUIZ 01</span>
+          <span class="quiz-title">Quanto sei viscido?</span>
+          <span class="quiz-desc">Cinque domande per misurare il tuo livello di viscidume.</span>
+          <span class="quiz-status" id="slimeStatus">Da iniziare</span>
+        </button>
+        <button class="quiz-card" data-start="crush">
+          <span class="quiz-number">QUIZ 02</span>
+          <span class="quiz-title">Scopri la tua crush</span>
+          <span class="quiz-desc">Cinque domande per scoprire chi fa battere il cuore.</span>
+          <span class="quiz-status" id="crushStatus">Da iniziare</span>
+        </button>
+      </div>
+
+      <section class="progress-card" aria-label="Quiz completati">
+        <div class="progress-topline"><span>Quiz completati</span><strong id="progressLabel">0 / 2</strong></div>
+        <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+      </section>
+    </section>
+
+    <section id="screen-quiz" class="screen" aria-live="polite">
+      <div class="quiz-topline">
+        <span id="quizKicker" class="eyebrow"></span>
+        <span id="questionCounter"></span>
+      </div>
+      <div class="progress-track quiz-progress"><div id="quizProgressFill" class="progress-fill"></div></div>
+      <h2 id="questionTitle" class="question-title"></h2>
+      <div id="answers" class="answers-grid"></div>
+      <div class="quiz-actions">
+        <button id="backQuestionBtn" class="secondary-btn" type="button">← Domanda precedente</button>
+        <button id="homeFromQuizBtn" class="ghost-btn" type="button">Torna alla home</button>
+      </div>
+    </section>
+
+    <section id="screen-complete" class="screen" aria-labelledby="completeTitle">
+      <div class="complete-card">
+        <span class="hero-emoji">✨</span>
+        <p class="eyebrow">MISSIONE COMPLETATA</p>
+        <h2 id="completeTitle">Ci siamo, PG!</h2>
+        <p id="completionText">Hai completato entrambi i quiz. Ora manca solo il gran finale.</p>
+        <button id="showFinalBtn" class="primary-btn" type="button">Apri il finale</button>
+      </div>
+    </section>
+
+    <section id="screen-final" class="screen" aria-labelledby="finalTitle">
+      <article class="final-card">
+        <p class="eyebrow">RISULTATO UFFICIALE</p>
+        <h2 id="finalTitle">Auguroni, PG! 🎉</h2>
+        <p class="final-copy">Che questo compleanno sia pieno di risate, momenti assurdi e livelli di viscidume assolutamente ingiustificabili.</p>
+        <div class="score-panel">
+          <span>Livello di viscidume</span>
+          <strong>1000<span>/10</span></strong>
+        </div>
+        <div class="crush-reveal">
+          <div class="crush-photo-wrap">
+            <img id="crushPhoto" src="assets/crush.jpg" alt="La crush di PG" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <div class="image-placeholder" aria-hidden="true">Aggiungi<br>assets/crush.jpg</div>
+          </div>
+          <div>
+            <p class="eyebrow">LA TUA CRUSH È...</p>
+            <h3 id="crushName">[Nome della crush]</h3>
+            <p>Il quiz ha parlato. Non discutere con la scienza.</p>
+          </div>
+        </div>
+        <button id="finalHomeBtn" class="secondary-btn" type="button">Torna alla home</button>
+      </article>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
