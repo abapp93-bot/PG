@@ -43,7 +43,7 @@ const CONFIG = {
           {label:'Arrampicata, ma solo sui culi', image:'assets/arr.png'},
           {label:'Uscire con i tuoi amici, ma i tuoi amici sono capibara', image:'assets/capi.png'},
           {label:'Vedere un sacco di ragazze, ma hanno tutte l’aspetto del Goblin', image:'assets/goblin.png'},
-          {label:'Dormire con Elisa… e Torre'}
+          {label:'Dormire con Elisa… e Torre',image:'assets/et.png'}
         ]},
         { text:'Dove vorresti essere in questo momento?', answers:[
           {label:'Asilo nido'}, {label:'Pulmino con solo ragazze maggiorenni'}, {label:'Lago dell’Olmo'}, {label:'Montagna'}
