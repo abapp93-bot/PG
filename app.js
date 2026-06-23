@@ -20,7 +20,7 @@ const CONFIG = {
           {label:'Il mare'}, {label:'I castelli di sabbia'}, {label:'I culi'}, {label:'Non vado in spiaggia'}
         ]},
         { text:'Con chi andresti in vacanza?', answers:[
-          {label:'Fabri, Fede e Santa', image:'assets/ffs.png'}, {label:'Elisa', image:'assets/ei.png'}, {label:'Bane', image:'assets/bane.png'}, {label:'Arwa', image:'assets/w.png'}
+          {label:'Claudio, Fede e Santa', image:'assets/ffs.png'}, {label:'Elisa', image:'assets/ei.png'}, {label:'Bane', image:'assets/bane.png'}, {label:'Arwa', image:'assets/w.png'}
         ]},
         { text:'In questa foto, dove erano le tue mani?', questionImage:'assets/aaa.png', answers:[
           {label:'Sul culo di Anastasia'}, {label:'Sulle tue, PG'}, {label:'Sulle tette di Anastasia'}, {label:'Sul culo di Dolce Ila'}
