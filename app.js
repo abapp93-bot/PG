@@ -1,45 +1,52 @@
-/* Personalizza QUIZ e CONFIG qui sotto. Per aggiungere foto: salva le immagini in assets/ e usa es. assets/quiz1-1.jpg */
+/* Personalizza domande e immagini qui. Salva tutte le foto nella cartella assets/. */
 const CONFIG = {
-  intro: '[Scrivi qui il testo di introduzione del compleanno.]',
-  crushName: '[Nome della crush]',
+  intro: 'Vuoi scoprire il tuo livello di viscosità e, soprattutto, chi è la tua crush segreta? Completa entrambi i quiz: alla fine avrai tutte le risposte.',
+  crushName: 'Fabrizio',
+  finalMessage: 'Buon compleanno, PG! Da tutti i tuoi amici: Claudio, Fede, Priscilla, Santa, Fabri, Elisa, Kathy e Alice.',
   quizzes: {
     slime: {
       label: 'QUIZ 01 · QUANTO SEI VISCIDO?',
       questions: [
-        { text:'Quando vuoi ottenere una risposta, tu...', answers:[
-          {label:'Mando un messaggio normale'}, {label:'Metto una reaction strategica'}, {label:'Scrivo “ehi sconosciuta/o 👀”', image:'assets/slime-1.jpg'}, {label:'Aspetto 3 minuti e mando un meme', image:'assets/slime-2.jpg'}
+        { text:'Arrivi in vineria, che fai?', answers:[
+          {label:'Raggiungi Fede e Fabri e parli con loro di politica', image:'assets/ff.png'},
+          {label:'Raggiungi Elisa e Priscilla', image:'assets/ep.png'},
+          {label:'Raggiungi Claudio e Bruggi', image:'assets/cb.png'},
+          {label:'Raggiungi la prima figa che trovi', image:'assets/rr.png'}
         ]},
-        { text:'Il tuo superpotere nelle chat è...', answers:[
-          {label:'Essere diretto/a'}, {label:'Il doppio senso non richiesto', image:'assets/slime-3.jpg'}, {label:'Rispondere dopo 0,2 secondi'}, {label:'Il “casualmente ero da queste parti”', image:'assets/slime-4.jpg'}
+        { text:'Quali di queste frasi è sbagliata?', answers:[
+          {label:'Olmo e culetti'}, {label:'Vineria e tettine'}, {label:'PG è viscoso'}, {label:'Fede e Giulia B sono comunisti'}
         ]},
-        { text:'Davanti a una storia Instagram interessante...', answers:[
-          {label:'Scorro oltre'}, {label:'Metto like e basta'}, {label:'Rispondo con 🔥', image:'assets/slime-5.jpg'}, {label:'Apro una conversazione epica', image:'assets/slime-6.jpg'}
+        { text:'Quando sei in spiaggia cosa guardi?', answers:[
+          {label:'Il mare'}, {label:'I castelli di sabbia'}, {label:'I culi'}, {label:'Non vado in spiaggia'}
         ]},
-        { text:'La tua frase da maestro/a del fascino è...', answers:[
-          {label:'“Come stai?”'}, {label:'“Ti ho sognato stanotte”', image:'assets/slime-7.jpg'}, {label:'“Non sono come gli altri”'}, {label:'“Dimmi tutto”', image:'assets/slime-8.jpg'}
+        { text:'Con chi andresti in vacanza?', answers:[
+          {label:'Fabri, Fede e Santa', image:'assets/ffs.png'}, {label:'Elisa', image:'assets/ei.png'}, {label:'Bane', image:'assets/bane.png'}, {label:'Arwa', image:'assets/w.png'}
         ]},
-        { text:'Il verdetto finale sul tuo stile è...', answers:[
-          {label:'Angelico'}, {label:'Sospettosamente affascinante', image:'assets/slime-9.jpg'}, {label:'Viscido ma con classe'}, {label:'Una leggenda del lubricante sociale', image:'assets/slime-10.jpg'}
+        { text:'In questa foto, dove erano le tue mani?', questionImage:'assets/aaa.png', answers:[
+          {label:'Sul culo di Anastasia'}, {label:'Sulle tue, PG'}, {label:'Sulle tette di Anastasia'}, {label:'Sul culo di Dolce Ila'}
         ]}
       ]
     },
     crush: {
       label: 'QUIZ 02 · SCOPRI LA TUA CRUSH',
       questions: [
-        { text:'La qualità che ti conquista subito è...', answers:[
-          {label:'Un sorriso incredibile', image:'assets/crush-1.jpg'}, {label:'L’ironia fulminante'}, {label:'Lo sguardo magnetico', image:'assets/crush-2.jpg'}, {label:'La gentilezza'}
+        { text:'In chat vorresti ricevere:', answers:[
+          {label:'Un messaggio da Santa'}, {label:'Un messaggio da Fede'}, {label:'Un messaggio da Fabri'}, {label:'Un messaggio da Vale'}
         ]},
-        { text:'L’appuntamento perfetto sarebbe...', answers:[
-          {label:'Aperitivo con vista'}, {label:'Una serata film + snack', image:'assets/crush-3.jpg'}, {label:'Un concerto improvvisato'}, {label:'Giro notturno in città', image:'assets/crush-4.jpg'}
+        { text:'In un’uscita romantica cosa deve indossare la ragazza?', answers:[
+          {label:'Vestito elegante'}, {label:'Vestito scollato'}, {label:'Nulla'}, {label:'Lingerie'}
         ]},
-        { text:'In chat vuoi ricevere...', answers:[
-          {label:'Messaggi vocali infiniti'}, {label:'Un meme perfetto', image:'assets/crush-5.jpg'}, {label:'Buongiorno e buonanotte'}, {label:'Una foto sorpresa', image:'assets/crush-6.jpg'}
+        { text:'Puoi scegliere con chi uscire, chi scegli?', answers:[
+          {label:'Vale', image:'assets/v.png'}, {label:'Roby', image:'assets/rr.png'}, {label:'Aurora', image:'assets/a.png'}, {label:'Arwa', image:'assets/w.png'}
         ]},
-        { text:'La tua debolezza segreta?', answers:[
-          {label:'Chi ride alle tue battute'}, {label:'Chi ti guarda così', image:'assets/crush-7.jpg'}, {label:'Chi condivide la pizza'}, {label:'Chi propone avventure', image:'assets/crush-8.jpg'}
+        { text:'Quale cosa della tua vita vorresti cambiare?', answers:[
+          {label:'Arrampicata, ma solo sui culi', image:'assets/arr.png'},
+          {label:'Uscire con i tuoi amici, ma i tuoi amici sono capibara', image:'assets/capi.png'},
+          {label:'Vedere un sacco di ragazze, ma hanno tutte l’aspetto del Goblin', image:'assets/goblin.png'},
+          {label:'Parlare, ma solo con Bimba', image:'assets/bim.png'}
         ]},
-        { text:'Quando arriva la tua crush tu...', answers:[
-          {label:'Rimani zen'}, {label:'Dimentichi come si parla', image:'assets/crush-9.jpg'}, {label:'Fingi di non averla vista'}, {label:'Diventi inspiegabilmente simpatico/a', image:'assets/crush-10.jpg'}
+        { text:'Dove vorresti essere in questo momento?', answers:[
+          {label:'Asilo nido'}, {label:'Pulmino con solo ragazze maggiorenni'}, {label:'Lago dell’Olmo'}, {label:'Montagna'}
         ]}
       ]
     }
@@ -50,12 +57,13 @@ const state = JSON.parse(localStorage.getItem('pgDoubleQuiz') || '{"completed":{
 let activeQuiz = null;
 let questionIndex = 0;
 const $ = (id) => document.getElementById(id);
-const screens = ['home','quiz','complete','final'];
+const screens = ['home','quiz','complete','final','gallery'];
 function showScreen(name){ screens.forEach(s=> $('screen-'+s).classList.toggle('active',s===name)); window.scrollTo({top:0,behavior:'smooth'}); }
 function save(){localStorage.setItem('pgDoubleQuiz',JSON.stringify(state));}
 function updateHome(){
   $('introText').textContent = CONFIG.intro;
   $('crushName').textContent = CONFIG.crushName;
+  $('finalMessage').textContent = CONFIG.finalMessage;
   const completeCount=Object.keys(state.completed).filter(k=>state.completed[k]).length;
   $('progressLabel').textContent=`${completeCount} / 2`;
   $('progressFill').style.width=`${completeCount*50}%`;
@@ -67,6 +75,12 @@ function renderQuestion(){
   const quiz=CONFIG.quizzes[activeQuiz]; const question=quiz.questions[questionIndex];
   $('quizKicker').textContent=quiz.label; $('questionCounter').textContent=`Domanda ${questionIndex+1} di ${quiz.questions.length}`;
   $('questionTitle').textContent=question.text;
+  $('questionImageWrap').innerHTML='';
+  if(question.questionImage){
+    const img=document.createElement('img'); img.src=question.questionImage; img.alt='Foto della domanda'; img.className='question-image';
+    img.onerror=()=>{$('questionImageWrap').innerHTML='<div class="question-image-missing">Aggiungi '+question.questionImage+'</div>'};
+    $('questionImageWrap').appendChild(img);
+  }
   $('quizProgressFill').style.width=`${((questionIndex+1)/quiz.questions.length)*100}%`;
   const saved=(state.answers[activeQuiz]||[])[questionIndex];
   $('answers').innerHTML='';
@@ -84,9 +98,10 @@ function selectAnswer(answerIndex){
   if(questionIndex<total-1){questionIndex++;renderQuestion();}
   else {state.completed[activeQuiz]=true;save();updateHome(); if(state.completed.slime&&state.completed.crush)showScreen('complete');else showScreen('home');}
 }
-$('homeBtn').onclick=()=>{updateHome();showScreen('home')}; $('homeFromQuizBtn').onclick=()=>{updateHome();showScreen('home')}; $('finalHomeBtn').onclick=()=>{updateHome();showScreen('home')};
+$('homeBtn').onclick=()=>{updateHome();showScreen('home')}; $('homeFromQuizBtn').onclick=()=>{updateHome();showScreen('home')}; $('finalHomeBtn').onclick=()=>{updateHome();showScreen('home')}; $('galleryHomeBtn').onclick=()=>{updateHome();showScreen('home')};
 $('backQuestionBtn').onclick=()=>{if(questionIndex>0){questionIndex--;renderQuestion();}};
 document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>startQuiz(b.dataset.start));
 $('showFinalBtn').onclick=()=>showScreen('final');
+$('openGalleryBtn').onclick=()=>showScreen('gallery');
 $('resetBtn').onclick=()=>{if(confirm('Vuoi azzerare i quiz?')){state.completed={};state.answers={};save();updateHome();showScreen('home')}};
 updateHome();

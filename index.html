@@ -53,6 +53,7 @@
       </div>
       <div class="progress-track quiz-progress"><div id="quizProgressFill" class="progress-fill"></div></div>
       <h2 id="questionTitle" class="question-title"></h2>
+      <div id="questionImageWrap" class="question-image-wrap"></div>
       <div id="answers" class="answers-grid"></div>
       <div class="quiz-actions">
         <button id="backQuestionBtn" class="secondary-btn" type="button">← Domanda precedente</button>
@@ -74,7 +75,8 @@
       <article class="final-card">
         <p class="eyebrow">RISULTATO UFFICIALE</p>
         <h2 id="finalTitle">Auguroni, PG! 🎉</h2>
-        <p class="final-copy">Che questo compleanno sia pieno di risate, momenti assurdi e livelli di viscidume assolutamente ingiustificabili.</p>
+        <p id="finalMessage" class="final-copy"></p>
+        <p class="final-copy">Ti vogliamo bene. Fabri… forse un po’ meno.</p>
         <div class="score-panel">
           <span>Livello di viscidume</span>
           <strong>1000<span>/10</span></strong>
@@ -86,11 +88,27 @@
           </div>
           <div>
             <p class="eyebrow">LA TUA CRUSH È...</p>
-            <h3 id="crushName">[Nome della crush]</h3>
+            <h3 id="crushName">Fabrizio</h3>
             <p>Il quiz ha parlato. Non discutere con la scienza.</p>
           </div>
         </div>
-        <button id="finalHomeBtn" class="secondary-btn" type="button">Torna alla home</button>
+        <div class="final-actions"><button id="openGalleryBtn" class="primary-btn" type="button">Guarda le foto →</button><button id="finalHomeBtn" class="secondary-btn" type="button">Torna alla home</button></div>
+      </article>
+    </section>
+
+    <section id="screen-gallery" class="screen" aria-labelledby="galleryTitle">
+      <article class="gallery-card">
+        <p class="eyebrow">BONUS FINALE</p>
+        <h2 id="galleryTitle">I momenti di PG 📸</h2>
+        <p>Le cinque foto che meritavano una schermata tutta loro.</p>
+        <div class="photo-gallery">
+          <img src="assets/1.png" alt="Foto ricordo 1" onerror="this.classList.add('missing')" />
+          <img src="assets/2.png" alt="Foto ricordo 2" onerror="this.classList.add('missing')" />
+          <img src="assets/3.png" alt="Foto ricordo 3" onerror="this.classList.add('missing')" />
+          <img src="assets/4.png" alt="Foto ricordo 4" onerror="this.classList.add('missing')" />
+          <img src="assets/5.png" alt="Foto ricordo 5" onerror="this.classList.add('missing')" />
+        </div>
+        <button id="galleryHomeBtn" class="secondary-btn" type="button">Torna alla home</button>
       </article>
     </section>
   </main>
