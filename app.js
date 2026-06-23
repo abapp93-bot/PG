@@ -10,8 +10,8 @@ const CONFIG = {
         { text:'Arrivi in vineria, che fai?', answers:[
           {label:'Raggiungi Fede e Fabri e parli con loro di politica', image:'assets/ff.png'},
           {label:'Raggiungi Elisa e Priscilla', image:'assets/ep.png'},
-          {label:'Raggiungi Claudio e Bruggi', image:'assets/cb.png'},
-          {label:'Raggiungi la prima figa che trovi', image:'assets/rr.png'}
+          {label:'Raggiungi Claudio ed Anna', image:'assets/cb.png'},
+          {label:'Raggiungi la prima figa che trovi', image:'assets/goblin.png'}
         ]},
         { text:'Quali di queste frasi è sbagliata?', answers:[
           {label:'Olmo e culetti'}, {label:'Vineria e tettine'}, {label:'PG è viscoso'}, {label:'Fede e Giulia B sono comunisti'}
@@ -43,7 +43,7 @@ const CONFIG = {
           {label:'Arrampicata, ma solo sui culi', image:'assets/arr.png'},
           {label:'Uscire con i tuoi amici, ma i tuoi amici sono capibara', image:'assets/capi.png'},
           {label:'Vedere un sacco di ragazze, ma hanno tutte l’aspetto del Goblin', image:'assets/goblin.png'},
-          {label:'Parlare, ma solo con Bimba', image:'assets/bim.png'}
+          {label:'Dormire con Elisa… e Torre'}
         ]},
         { text:'Dove vorresti essere in questo momento?', answers:[
           {label:'Asilo nido'}, {label:'Pulmino con solo ragazze maggiorenni'}, {label:'Lago dell’Olmo'}, {label:'Montagna'}

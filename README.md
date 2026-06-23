@@ -1,22 +1,8 @@
 # Il doppio quiz di PG
 
-Sito statico pronto per GitHub Pages.
+Apri `index.html` per provare il sito. Per GitHub Pages, carica il contenuto di questa cartella in un repository e attiva Pages dalla branch principale.
 
-## Personalizzazioni veloci
-1. Apri `app.js`.
-2. Cambia `CONFIG.intro` con il testo di introduzione.
-3. Cambia `CONFIG.crushName` con il nome della crush.
-4. Sostituisci le domande e le risposte nel blocco `quizzes`.
-5. Metti le foto nella cartella `assets/` con gli stessi nomi usati nel codice (oppure cambia i percorsi).
-6. Metti la foto finale della crush in `assets/crush.jpg`.
+## Foto da inserire
+Metti tutte le immagini nella cartella `assets/`, mantenendo questi nomi: `ff.png`, `ep.png`, `cb.png`, `goblin.png`, `ffs.png`, `ei.png`, `bane.png`, `w.png`, `v.png`, `rr.png`, `a.png`, `arr.png`, `capi.png`, `aaa.png`, `fabrizio.png`, `1.png`, `2.png`, `3.png`, `4.png`, `5.png`.
 
-Ogni domanda ha 4 risposte e, nella struttura predisposta, 2 risposte fotografiche: puoi trasformarne una terza in foto semplicemente aggiungendo `image: 'assets/nomefile.jpg'` a una risposta testuale.
-
-## Pubblicazione su GitHub Pages
-1. Crea un nuovo repository su GitHub.
-2. Carica tutti i file di questa cartella mantenendo `assets/`.
-3. Vai in **Settings → Pages**.
-4. In **Build and deployment**, scegli **Deploy from a branch**.
-5. Seleziona il branch `main` e la cartella `/ (root)`, poi salva.
-
-Il link pubblico comparirà nella pagina GitHub Pages del repository.
+Le immagini sono ora mostrate interamente (`object-fit: contain`), senza ritagli. Potranno rimanere bande vuote ai lati o sopra/sotto quando le proporzioni sono diverse: è normale e serve a non tagliare la foto.
