@@ -92,7 +92,17 @@
             <p>Il quiz ha parlato. Non discutere con la scienza.</p>
           </div>
         </div>
-        <div class="final-actions"><button id="openGalleryBtn" class="primary-btn" type="button">Guarda le foto →</button><button id="finalHomeBtn" class="secondary-btn" type="button">Torna alla home</button></div>
+        <div class="final-actions"><button id="openGalleryBtn" class="primary-btn" type="button">Guarda le foto →</button><button id="openRecapBtn" class="secondary-btn" type="button">Vedi le tue risposte</button><button id="finalHomeBtn" class="secondary-btn" type="button">Torna alla home</button></div>
+      </article>
+    </section>
+
+    <section id="screen-recap" class="screen" aria-labelledby="recapTitle">
+      <article class="recap-card">
+        <p class="eyebrow">IL TUO PERCORSO</p>
+        <h2 id="recapTitle">Le tue risposte ✨</h2>
+        <p class="recap-intro">Ecco tutte le scelte che ti hanno portato al verdetto finale.</p>
+        <div id="recapContent" class="recap-content"></div>
+        <div class="final-actions"><button id="recapFinalBtn" class="primary-btn" type="button">← Torna al finale</button><button id="recapHomeBtn" class="secondary-btn" type="button">Torna alla home</button></div>
       </article>
     </section>
 
@@ -101,6 +111,7 @@
         <p class="eyebrow">BONUS FINALE</p>
         <h2 id="galleryTitle">I momenti di PG 📸</h2>
         <p>Le cinque foto che meritavano una schermata tutta loro.</p>
+        <p class="gallery-hint">Tocca una foto per ingrandirla.</p>
         <div class="photo-gallery">
           <img src="assets/1.png" alt="Foto ricordo 1" onerror="this.classList.add('missing')" />
           <img src="assets/2.png" alt="Foto ricordo 2" onerror="this.classList.add('missing')" />
@@ -112,6 +123,10 @@
       </article>
     </section>
   </main>
+  <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Foto ingrandita">
+    <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Chiudi foto">×</button>
+    <img id="lightboxImage" src="" alt="" />
+  </div>
   <script src="app.js"></script>
 </body>
 </html>

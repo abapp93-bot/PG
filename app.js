@@ -20,7 +20,7 @@ const CONFIG = {
           {label:'Il mare'}, {label:'I castelli di sabbia'}, {label:'I culi'}, {label:'Non vado in spiaggia'}
         ]},
         { text:'Con chi andresti in vacanza?', answers:[
-          {label:'Claudio, Fede e Santa', image:'assets/ffs.png'}, {label:'Elisa', image:'assets/ei.png'}, {label:'Bane', image:'assets/bane.png'}, {label:'Arwa', image:'assets/w.png'}
+          {label:'Fabri, Fede e Santa', image:'assets/ffs.png'}, {label:'Elisa', image:'assets/ei.png'}, {label:'Bane', image:'assets/bane.png'}, {label:'Arwa', image:'assets/w.png'}
         ]},
         { text:'In questa foto, dove erano le tue mani?', questionImage:'assets/aaa.png', answers:[
           {label:'Sul culo di Anastasia'}, {label:'Sulle tue, PG'}, {label:'Sulle tette di Anastasia'}, {label:'Sul culo di Dolce Ila'}
@@ -43,7 +43,7 @@ const CONFIG = {
           {label:'Arrampicata, ma solo sui culi', image:'assets/arr.png'},
           {label:'Uscire con i tuoi amici, ma i tuoi amici sono capibara', image:'assets/capi.png'},
           {label:'Vedere un sacco di ragazze, ma hanno tutte l’aspetto del Goblin', image:'assets/goblin.png'},
-          {label:'Dormire con Elisa… e Torre',image:'assets/et.png'}
+          {label:'Dormire con Elisa… e Torre', image:'assets/et.png'}
         ]},
         { text:'Dove vorresti essere in questo momento?', answers:[
           {label:'Asilo nido'}, {label:'Pulmino con solo ragazze maggiorenni'}, {label:'Lago dell’Olmo'}, {label:'Montagna'}
@@ -57,9 +57,41 @@ const state = JSON.parse(localStorage.getItem('pgDoubleQuiz') || '{"completed":{
 let activeQuiz = null;
 let questionIndex = 0;
 const $ = (id) => document.getElementById(id);
-const screens = ['home','quiz','complete','final','gallery'];
+const screens = ['home','quiz','complete','final','gallery','recap'];
 function showScreen(name){ screens.forEach(s=> $('screen-'+s).classList.toggle('active',s===name)); window.scrollTo({top:0,behavior:'smooth'}); }
 function save(){localStorage.setItem('pgDoubleQuiz',JSON.stringify(state));}
+
+function renderRecap(){
+  const root=$('recapContent');
+  root.innerHTML='';
+  Object.entries(CONFIG.quizzes).forEach(([quizKey, quiz])=>{
+    const block=document.createElement('section');
+    block.className='recap-quiz';
+    const heading=document.createElement('h3'); heading.textContent=quiz.label; block.appendChild(heading);
+    const answers=state.answers[quizKey]||[];
+    quiz.questions.forEach((question, idx)=>{
+      const answerIndex=answers[idx];
+      const chosen=Number.isInteger(answerIndex) ? question.answers[answerIndex] : null;
+      const item=document.createElement('article'); item.className='recap-item';
+      const q=document.createElement('p'); q.className='recap-question'; q.textContent=`${idx+1}. ${question.text}`; item.appendChild(q);
+      if(chosen){
+        if(chosen.image){ const img=document.createElement('img'); img.className='recap-image'; img.src=chosen.image; img.alt=''; img.onerror=()=>img.style.display='none'; item.appendChild(img); }
+        const a=document.createElement('p'); a.className='recap-answer'; a.textContent=chosen.label; item.appendChild(a);
+      } else {
+        const a=document.createElement('p'); a.className='recap-answer unanswered'; a.textContent='Nessuna risposta salvata'; item.appendChild(a);
+      }
+      block.appendChild(item);
+    });
+    root.appendChild(block);
+  });
+}
+function openLightbox(img){
+  const box=$('lightbox'); const target=$('lightboxImage');
+  target.src=img.currentSrc||img.src; target.alt=img.alt||'Foto ingrandita';
+  box.classList.add('active'); box.setAttribute('aria-hidden','false');
+}
+function closeLightbox(){ const box=$('lightbox'); box.classList.remove('active'); box.setAttribute('aria-hidden','true'); }
+
 function updateHome(){
   $('introText').textContent = CONFIG.intro;
   $('crushName').textContent = CONFIG.crushName;
@@ -103,5 +135,12 @@ $('backQuestionBtn').onclick=()=>{if(questionIndex>0){questionIndex--;renderQues
 document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>startQuiz(b.dataset.start));
 $('showFinalBtn').onclick=()=>showScreen('final');
 $('openGalleryBtn').onclick=()=>showScreen('gallery');
+$('openRecapBtn').onclick=()=>{renderRecap();showScreen('recap')};
+$('recapFinalBtn').onclick=()=>showScreen('final');
+$('recapHomeBtn').onclick=()=>{updateHome();showScreen('home')};
+document.querySelectorAll('.photo-gallery img').forEach(img=>img.addEventListener('click',()=>{if(!img.classList.contains('missing')) openLightbox(img)}));
+$('lightboxClose').onclick=closeLightbox;
+$('lightbox').onclick=(event)=>{if(event.target===$('lightbox')) closeLightbox()};
+document.addEventListener('keydown',(event)=>{if(event.key==='Escape') closeLightbox()});
 $('resetBtn').onclick=()=>{if(confirm('Vuoi azzerare i quiz?')){state.completed={};state.answers={};save();updateHome();showScreen('home')}};
 updateHome();
